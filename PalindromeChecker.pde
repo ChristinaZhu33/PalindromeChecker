@@ -2,7 +2,7 @@
   {
     String lines[] = loadStrings("palindromes.txt");
     System.out.println("there are " + lines.length + " lines");
-    //holds the modified string w/ no capital letters or non-letter characters
+    //this string holds the modified string w/ no capital letters or non-letter characters
     String modified = "";
     for (int i=0; i < lines.length; i++) 
     {
