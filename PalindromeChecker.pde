@@ -16,9 +16,9 @@
       }
     }
   }
+  //check if the string is a palindrome
   public boolean palindrome(String word)
   {
-    //your code here
     String sWord = (word);
   for(int i = 0; i < (sWord.length()/2); i++)
   {
@@ -29,7 +29,7 @@
   }
   return true;
   }
-//no capital letters
+//no capitalized letters
   public String noCapitals(String sWord){
   return sWord.toLowerCase();
 }
@@ -43,7 +43,6 @@
   }
   return s;
  }
-
 //reverse
 public String reverse(String str)
   {
