@@ -1,29 +1,57 @@
-public void setup()
-{
-  String lines[] = loadStrings("palindromes.txt");
-  System.out.println("there are " + lines.length + " lines");
-  for (int i=0; i < lines.length; i++) 
+  public void setup()
   {
-    if(palindrome(lines[i])==true)
+    String lines[] = loadStrings("palindromes.txt");
+    System.out.println("there are " + lines.length + " lines");
+    String modified = "";
+    for (int i=0; i < lines.length; i++) 
     {
-      System.out.println(lines[i] + " IS a palindrome.");
-    }
-    else
-    {
-      System.out.println(lines[i] + " is NOT a palindrome.");
+      modified = noCapitals(onlyLetters(lines[i]));
+      if(palindrome(modified)==true)
+      {
+        System.out.println(lines[i] + " IS a palindrome.");
+      }
+      else
+      {
+        System.out.println(lines[i] + " is NOT a palindrome.");
+      }
     }
   }
-}
-public boolean palindrome(String word)
-{
-  //your code here
-  return false;
-}
-public String reverse(String str)
-{
-    String sNew = new String();
+  public boolean palindrome(String word)
+  {
     //your code here
-    return sNew;
+    // String sWord = characterOnly(word);
+    String sWord = (word);
+  for(int i = 0; i < (sWord.length()/2); i++)
+  {
+    if((sWord.charAt(i))!=(sWord.charAt(word.length()-i-1)))
+    {
+      return false;
+    }
+  }
+  return true;
+  }
+//no capital letters
+  public String noCapitals(String sWord){
+  return sWord.toLowerCase();
 }
+//only letters
+ public String onlyLetters(String sWord){
+     String s = new String();
+  for(int i = 0; i < sWord.length(); i++){
+    if(Character.isLetter(sWord.charAt(i)) == true){
+      s = s + sWord.substring(i, i+1);
+    }
+  }
+  return s;
+ }
 
-
+//reverse
+public String reverse(String str)
+  {
+      String sNew = new String();
+      //your code here
+      for (int i =  str.length()-1; i >= 0; i--){
+    sNew = sNew + str.substring(i, i+1);
+  }
+      return sNew;
+  }
