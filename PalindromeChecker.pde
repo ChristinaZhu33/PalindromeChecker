@@ -19,7 +19,6 @@
   public boolean palindrome(String word)
   {
     //your code here
-    // String sWord = characterOnly(word);
     String sWord = (word);
   for(int i = 0; i < (sWord.length()/2); i++)
   {
